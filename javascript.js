@@ -11,4 +11,22 @@ function getComputerChoice(){
         return "Scissors";
     }
 }
+
+function getHumanChoice(){
+    let choice = prompt("Rock, paper, scissors, shoot: ");
+    if (choice == "Rock"){
+        return "Rock";
+    }
+    else if(choice == "Paper"){
+        return "Paper";
+    }
+    else if (choice == "Scissors"){
+        return "Scissors";
+    }
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
 console.log(getComputerChoice());
+console.log(getHumanChoice());
