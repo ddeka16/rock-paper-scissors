@@ -15,6 +15,7 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let choice = prompt("Rock, paper, scissors, shoot: ");
+    console.clear();
     choice = choice.toUpperCase();
     if (choice == "ROCK"){
         return "ROCK";
@@ -76,12 +77,21 @@ function playGame(){
     for(let i = 0; i < 5; i++){
     const HumanSelection = getHumanChoice();
     const ComputerSelection = getComputerChoice();
-    playRound(ComputerSelection, HumanSelection);
     console.log("You chose " + HumanSelection);
     console.log("Computer chose " + ComputerSelection);
+    playRound(ComputerSelection, HumanSelection);
     console.log("The score is: ");
     console.log("The Player: " + humanScore);
     console.log("The Computer: " + computerScore);
+    }
+    if(humanScore > computerScore){
+        console.log("CONGRATULATIONS!! YOU WON THE GAME");
+    }
+    else if (computerScore > humanScore){
+        console.log("I'm sorry, but you lost the game. Computer wins");
+    }
+    else {
+        console.log("It's a draw. Nice try!");
     }
 }
 
