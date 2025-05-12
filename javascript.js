@@ -1,9 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
-
 function getComputerChoice(){
     let choice = Math.random();
-    console.log(choice);
     if (choice < 0.34){
         return "ROCK";
     }
@@ -74,5 +72,17 @@ function playRound(ComputerChoice, HumanChoice){
     }
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+function playGame(){
+    for(let i = 0; i < 5; i++){
+    const HumanSelection = getHumanChoice();
+    const ComputerSelection = getComputerChoice();
+    playRound(ComputerSelection, HumanSelection);
+    console.log("You chose " + HumanSelection);
+    console.log("Computer chose " + ComputerSelection);
+    console.log("The score is: ");
+    console.log("The Player: " + humanScore);
+    console.log("The Computer: " + computerScore);
+    }
+}
+
+playGame();
