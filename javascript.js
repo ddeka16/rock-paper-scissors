@@ -72,27 +72,33 @@ function playRound(ComputerChoice, HumanChoice){
         }
     }
 }
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        playRound();
+    })
+})
 
-function playGame(){
-    for(let i = 0; i < 5; i++){
-    const HumanSelection = getHumanChoice();
-    const ComputerSelection = getComputerChoice();
-    console.log("You chose " + HumanSelection);
-    console.log("Computer chose " + ComputerSelection);
-    playRound(ComputerSelection, HumanSelection);
-    console.log("The score is: ");
-    console.log("The Player: " + humanScore);
-    console.log("The Computer: " + computerScore);
-    }
-    if(humanScore > computerScore){
-        console.log("CONGRATULATIONS!! YOU WON THE GAME");
-    }
-    else if (computerScore > humanScore){
-        console.log("I'm sorry, but you lost the game. Computer wins");
-    }
-    else {
-        console.log("It's a draw. Nice try!");
-    }
-}
+// function playGame(){
+//     for(let i = 0; i < 5; i++){
+//     const HumanSelection = getHumanChoice();
+//     const ComputerSelection = getComputerChoice();
+//     console.log("You chose " + HumanSelection);
+//     console.log("Computer chose " + ComputerSelection);
+//     playRound(ComputerSelection, HumanSelection);
+//     console.log("The score is: ");
+//     console.log("The Player: " + humanScore);
+//     console.log("The Computer: " + computerScore);
+//     }
+//     if(humanScore > computerScore){
+//         console.log("CONGRATULATIONS!! YOU WON THE GAME");
+//     }
+//     else if (computerScore > humanScore){
+//         console.log("I'm sorry, but you lost the game. Computer wins");
+//     }
+//     else {
+//         console.log("It's a draw. Nice try!");
+//     }
+// }
 
-playGame();
+// playGame();
