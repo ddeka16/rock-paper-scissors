@@ -72,10 +72,13 @@ function playRound(ComputerChoice, HumanChoice){
         }
     }
 }
+
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        playRound();
+        const humanChoice = button.id.toUpperCase();
+        const computerChoice = getComputerChoice();
+        playRound(computerChoice, humanChoice);
     })
 })
 
