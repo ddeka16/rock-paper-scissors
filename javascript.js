@@ -15,6 +15,7 @@ function getComputerChoice(){
 
 const winner = document.querySelector(".roundwinner");
 const score = document.querySelector(".score");
+const result = document.querySelector(".result");
 
 function playRound(ComputerChoice, HumanChoice){
     if(HumanChoice == "ROCK"){
@@ -64,5 +65,15 @@ buttons.forEach((button) => {
         const humanChoice = button.id.toUpperCase();
         const computerChoice = getComputerChoice();
         playRound(computerChoice, humanChoice);
-    })
-})
+        score.textContent = "Player: " + humanScore + ":" + computerScore + " The Computer";
+        if(humanScore == 5){
+        result.textContent = "Congratulations! You won the match!";
+        buttons.forEach((button) => button.disabled = true);
+        }
+        if(computerScore == 5){
+        result.textContent = "I'm sorry, but you lost. Computer is the winner";
+        buttons.forEach((button) => button.disabled = true);
+        }
+    });
+});
+
